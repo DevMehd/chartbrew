@@ -1,3 +1,7 @@
+@echo off
+cls
 git pull
-start "C:\Users\mbour\Documents\development\chartbrew\server\start.bat"
-start "C:\Users\mbour\Documents\development\chartbrew\client\start.bat"
+
+start cmd /k "cd server/ && call start.bat || cd server/ && npm run start-dev && cd ../"
+cd client/
+start cmd /k "call start.bat || npm run start && cd ../"
